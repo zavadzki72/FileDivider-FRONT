@@ -1,8 +1,6 @@
 window.onload = function() {
     const alertList = document.querySelectorAll('.alert')
     const alerts = [...alertList].map(element => new bootstrap.Alert(element));
-
-    console.log("AAs" + alerts)
 }
 
 const thisForm = document.getElementById('file-form');
@@ -52,8 +50,6 @@ thisForm.addEventListener('submit', async function (e) {
     }
 
     var blob = await response.blob();
-
-    console.log("BLOB: ", blob);
 
     var date = new Date();
     saveFile(blob, `FileDivider_${date.toISOString()}.zip`);

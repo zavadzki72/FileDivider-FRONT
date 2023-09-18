@@ -29,7 +29,8 @@ thisForm.addEventListener('submit', async function (e) {
     var formdata = new FormData();
     formdata.append("formFile", file.files[0], "/path/to/file");
 
-    var urlRequest = `https://localhost:7149/divide?numberLineToDivide=${numberLines}`;
+    // var urlRequest = `https://localhost:7149/divide?numberLineToDivide=${numberLines}`;
+    var urlRequest = `https://filedivider-api-lctjimkxeq-uc.a.run.app/divide?numberLineToDivide=${numberLines}`;
 
     const response = await fetch(urlRequest, {
         method: 'POST',

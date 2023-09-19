@@ -10,7 +10,9 @@ thisForm.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     var errorAlert = $('#error-alert');
+    var sucessAlert = $('#sucess-alert');
     var errorAlertMessage = $('#alert-error-message');
+    var sucessAlertMessage = $('#alert-sucess-message');
 
     var numberLines = document.getElementById("file-form-number-lines-input").value;
     var file = document.querySelector('#file-form-file-input');
@@ -41,7 +43,7 @@ thisForm.addEventListener('submit', async function (e) {
     });
 
     if(response.status != 200){
-        var respString = response.json();
+        var respString = await response.text();
 
         errorAlertMessage.text(`Ocorreu um erro (${respString})!`);
         errorAlert.fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
@@ -50,9 +52,14 @@ thisForm.addEventListener('submit', async function (e) {
     }
 
     var blob = await response.blob();
+    document.getElementById("file-form-number-lines-input").value = '';
+    file.value = '';
 
     var date = new Date();
     saveFile(blob, `FileDivider_${date.toISOString()}.zip`);
+
+    sucessAlertMessage.text('Seu arquivo foi baixado!');
+    sucessAlert.fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 });
 
 const errorAlert = document.getElementById('error-alert');

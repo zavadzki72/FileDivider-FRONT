@@ -15,213 +15,320 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://fd.marccusz.com">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+        <link rel="stylesheet" href="assets/txt-divider.css">
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;400&display=swap" rel="stylesheet">
 
         <title>File Divider</title>
     </head>
-    <body>
+    <body id="body">
 
         <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-filetype-txt" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-2v-1h2a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.928 15.849v-3.337h1.136v-.662H0v.662h1.134v3.337h.794Zm4.689-3.999h-.894L4.9 13.289h-.035l-.832-1.439h-.932l1.228 1.983-1.24 2.016h.862l.853-1.415h.035l.85 1.415h.907l-1.253-1.992 1.274-2.007Zm1.93.662v3.337h-.794v-3.337H6.619v-.662h3.064v.662H8.546Z" />
-                </svg>
-                FileDivider
-            </a>
-
-            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-                <ul class="navbar-nav mr-auto">
-
-                </ul>
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="nav-logo">
+                    <a href="#">
+                        <img src="assets/images/logo.png" width="120" height="42" alt="File Divider logo">
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <div id="nav-menu-tools" class="nav-menu-tools">
+                        <a href="#">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M4 5.125C4 4.50368 4.50368 4 5.125 4H6.875C7.49632 4 8 4.50368 8 5.125V6.875C8 7.49632 7.49632 8 6.875 8H5.125C4.50368 8 4 7.49632 4 6.875V5.125ZM10 5.125C10 4.50368 10.5037 4 11.125 4H12.875C13.4963 4 14 4.50368 14 5.125V6.875C14 7.49632 13.4963 8 12.875 8H11.125C10.5037 8 10 7.49632 10 6.875V5.125ZM17.25 4C16.5596 4 16 4.55964 16 5.25V6.75C16 7.44036 16.5596 8 17.25 8H18.75C19.4404 8 20 7.44036 20 6.75V5.25C20 4.55964 19.4404 4 18.75 4H17.25ZM16 11.125C16 10.5037 16.5037 10 17.125 10H18.875C19.4963 10 20 10.5037 20 11.125V12.875C20 13.4963 19.4963 14 18.875 14H17.125C16.5037 14 16 13.4963 16 12.875V11.125ZM17.125 16C16.5037 16 16 16.5037 16 17.125V18.875C16 19.4963 16.5037 20 17.125 20H18.875C19.4963 20 20 19.4963 20 18.875V17.125C20 16.5037 19.4963 16 18.875 16H17.125ZM10 11.125C10 10.5037 10.5037 10 11.125 10H12.875C13.4963 10 14 10.5037 14 11.125V12.875C14 13.4963 13.4963 14 12.875 14H11.125C10.5037 14 10 13.4963 10 12.875V11.125ZM11.125 16C10.5037 16 10 16.5037 10 17.125V18.875C10 19.4963 10.5037 20 11.125 20H12.875C13.4963 20 14 19.4963 14 18.875V17.125C14 16.5037 13.4963 16 12.875 16H11.125ZM4 11.125C4 10.5037 4.50368 10 5.125 10H6.875C7.49632 10 8 10.5037 8 11.125V12.875C8 13.4963 7.49632 14 6.875 14H5.125C4.50368 14 4 13.4963 4 12.875V11.125ZM5.125 16C4.50368 16 4 16.5037 4 17.125V18.875C4 19.4963 4.50368 20 5.125 20H6.875C7.49632 20 8 19.4963 8 18.875V17.125C8 16.5037 7.49632 16 6.875 16H5.125Z"></path>
+                            </svg>
+                        </a>
+                        <span>Tools</span>
+                        <a class="nav__arrow" href="#">
+                            <svg id="down_arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                            </svg>
+                            <svg id="up_arrow" class="closed" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#0055FF" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                                <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-buttons">
                 <a class="navbar-brand" href="https://github.com/zavadzki72/FileDivider" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="" class="bi bi-github" viewBox="0 0 16 16">
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                     </svg>
                 </a>
             </div>
         </nav>
-        <!-- END NAVBAR -->
 
-        <div id="error-alert" style="display: none;">
-            <div class="alert alert-danger d-flex align-items-center" role="alert">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
-                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        <!-- NAVBAR DROPDOWN -->
+        <div id="nav-dropdown" class="nav-dropdown closed">
+            <div class="nav-dropdown-content">
+                <ul class="nav-dropdown-ul">
+                    <li class="nav-dropdown-li">
+                        <div class="nav-dropdown-li-title">
+                            <span>Divisor de Arquivos</span>
+                        </div>
+                        <ul class="nav-dropdown-li-ul">
+                            <div id="nav-dropdown-div-item-ciano" class="nav-dropdown-div-item nav-item-active">
+                                <svg viewBox="0 0 24 24" width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path d="M6.5 19.4698V4.5H14.5L17.5 7.5V19.5L6.5 19.4698Z" stroke="white"></path><path d="M14.5 4.5V7.5H17.5" stroke="white"></path><path d="M5 14H12V17H5V14Z" fill="white"></path><path d="M8 12.5H16" stroke="white"></path><path d="M13 14.5H16" stroke="white"></path><path d="M13 16.5H16" stroke="white"></path><path d="M8 10.5H16" stroke="white"></path>
+                                </svg>
+                                <li class="nav-dropdown-item">
+                                    Divisor TXT
+                                </li>
+                            </div>
+                            <div class="nav-dropdown-div-item nav-item-breve">
+                                <svg viewBox="0 0 24 24" width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF5975"></path><path d="M11.8748 5.58096L12 5.534L12.1252 5.58096L12.9182 5.87832L15.3244 6.78066L17.7307 7.68301L18.4936 7.96909C18.3717 12.3117 16.7249 14.9298 15.1218 16.4699C14.2936 17.2655 13.4687 17.7813 12.8535 18.0971C12.5461 18.2549 12.2921 18.3622 12.1177 18.4294C12.0768 18.4451 12.0403 18.4586 12.0086 18.47C11.9761 18.4572 11.9385 18.4419 11.8963 18.4242C11.7209 18.3505 11.4657 18.2339 11.1572 18.0657C10.5395 17.7291 9.71169 17.188 8.88098 16.3743C7.27294 14.7991 5.62989 12.1803 5.50664 7.96901L6.26931 7.68301L8.67556 6.78066L11.0818 5.87832L11.8748 5.58096Z" stroke="white"></path>
+                                </svg>
+                                <li class="nav-dropdown-item">
+                                    Em Breve
+                                </li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown-li">
+                        <div class="nav-dropdown-li-title">
+                            <span>Em Breve</span>
+                        </div>
+                        <ul class="nav-dropdown-li-ul">
+                            <div class="nav-dropdown-div-item nav-dropdown-div-item-red nav-item-breve">
+                                <svg viewBox="0 0 24 24" width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF5975"></path><path d="M11.8748 5.58096L12 5.534L12.1252 5.58096L12.9182 5.87832L15.3244 6.78066L17.7307 7.68301L18.4936 7.96909C18.3717 12.3117 16.7249 14.9298 15.1218 16.4699C14.2936 17.2655 13.4687 17.7813 12.8535 18.0971C12.5461 18.2549 12.2921 18.3622 12.1177 18.4294C12.0768 18.4451 12.0403 18.4586 12.0086 18.47C11.9761 18.4572 11.9385 18.4419 11.8963 18.4242C11.7209 18.3505 11.4657 18.2339 11.1572 18.0657C10.5395 17.7291 9.71169 17.188 8.88098 16.3743C7.27294 14.7991 5.62989 12.1803 5.50664 7.96901L6.26931 7.68301L8.67556 6.78066L11.0818 5.87832L11.8748 5.58096Z" stroke="white"></path>
+                                </svg>
+                                <li class="nav-dropdown-item">
+                                    Em Breve
+                                </li>
+                            </div>
+                            <div class="nav-dropdown-div-item nav-dropdown-div-item-red nav-item-breve">
+                                <svg viewBox="0 0 24 24" width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF5975"></path><path d="M11.8748 5.58096L12 5.534L12.1252 5.58096L12.9182 5.87832L15.3244 6.78066L17.7307 7.68301L18.4936 7.96909C18.3717 12.3117 16.7249 14.9298 15.1218 16.4699C14.2936 17.2655 13.4687 17.7813 12.8535 18.0971C12.5461 18.2549 12.2921 18.3622 12.1177 18.4294C12.0768 18.4451 12.0403 18.4586 12.0086 18.47C11.9761 18.4572 11.9385 18.4419 11.8963 18.4242C11.7209 18.3505 11.4657 18.2339 11.1572 18.0657C10.5395 17.7291 9.71169 17.188 8.88098 16.3743C7.27294 14.7991 5.62989 12.1803 5.50664 7.96901L6.26931 7.68301L8.67556 6.78066L11.0818 5.87832L11.8748 5.58096Z" stroke="white"></path>
+                                </svg>
+                                <li class="nav-dropdown-item">
+                                    Em Breve
+                                </li>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="tudo" class="tudo">
+        
+            <!-- ALERTAS -->
+            <div id="error-alert" class="alert alert-error closed">
+                <div class="alert-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    <div id="alert-error-message">
+                        <span></span>
+                    </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                 </svg>
-                <div id="alert-error-message">
-                </div>
             </div>
-        </div>
 
-        <div id="sucess-alert" style="display: none;">
-            <div class="alert alert-success d-flex align-items-center" role="alert">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-                  </svg>
-                <div id="alert-sucess-message">
+            <div id="success-alert" class="alert alert-success closed">
+                <div class="alert-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    <div id="alert-error-message">
+                        <span></span>
+                    </div>
                 </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
             </div>
-        </div>
 
-        <!-- INPUT -->
-        <div class="jumbotron jumbotron-fluid red text-center">
-            <div class="container">
-                <h1 class="display-4"><strong>File Divider</strong></h1>
-                <p class="lead">Divida seus arquivos com facilidade</p>
-                <br />
-                <form id="file-form">
-                    <div class="form-group">
-                        <label for="file-form-file-input" class="btn btn-primary btn-lg">
-                            ARQUIVO
-                        </label>
-                        <input type="file" class="form-control-file" id="file-form-file-input" hidden>
-                        <br />
-                        <br />
-                        <div class="input-group mb-1 col-sm-4 m-auto">
-                            <span class="input-group-text">#</span>
-                            <input placeholder="Numero de linhas" type="number" class="form-control" aria-label="Quantidade de linhas" id="file-form-number-lines-input" required>
-                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Enviar</button>
+            <!-- BANNER -->
+            <div id="div-app" class="app">
+                <header class="header-content">
+                    <div class="header-title">
+                        <h1>Divisor de TXT</h1>
+                    </div>
+                    <div class="header-content">
+                        <div class="header-content-square">
+                            <div class="header-content-border">
+                                <form id="file-form">
+                                    <input type="file" id="file-input" hidden>
+                                    <div class="header-content-img">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 96 60" fill="rgb(255, 255, 255)">
+                                            <path d="M56.9358018,0.887952143 L87.1245072,1.94216497 L95.1229308,10.5194242 L93.649924,52.7008195 C93.6036653,54.0254955 92.5349073,55.07339 91.2286594,55.11247 L91.0641982,55.1120479 L68.9993032,54.34053 L69,58 C69,59.1045695 68.1045695,60 67,60 L31,60 C29.8954305,60 29,59.1045695 29,58 L28.9993032,54.26853 L4.93575717,55.1094924 C3.61108122,55.1557511 2.49118654,54.162694 2.36108243,52.862354 L2.35003136,52.6982641 L0.67485552,4.72750438 C0.628596816,3.40282843 1.62165394,2.28293375 2.92199388,2.15282964 L3.08608385,2.14177857 L33.2747893,1.08756574 L40.5172077,7.8412302 L40.3683032,7.99952995 L54.1853032,7.99952995 L54.350076,3.29918047 C54.3963347,1.97450452 55.4650927,0.926610013 56.7713406,0.887529955 L56.9358018,0.887952143 Z M59.9993032,8.99952995 L31,9 C30.4871642,9 30.0644928,9.38604019 30.0067277,9.88337887 L30,10 L29.9993032,38.99953 L50,39 C50.5522847,39 51,39.4477153 51,40 L51,51 C51,51.5522847 50.5522847,52 50,52 L29.9993032,51.99953 L30,58 C30,58.5128358 30.3860402,58.9355072 30.8833789,58.9932723 L31,59 L67,59 C67.5128358,59 67.9355072,58.6139598 67.9932723,58.1166211 L68,58 L67.9993032,16.99953 L60,17 L59.9993032,8.99952995 Z M56.9009023,1.88734297 C56.1216811,1.86013197 55.4605576,2.43229572 55.3613708,3.1899476 L55.3494668,3.33407997 L55.1863032,7.99952995 L61,8 L69,16 L68.9991926,25.6289267 C70.5660308,24.8310303 72.3185302,24.4353033 74.1222153,24.4982894 C79.9176726,24.7006712 84.4517561,29.5628805 84.2493743,35.3583378 C84.0469925,41.1537951 79.1847832,45.6878786 73.3893259,45.4854968 C71.8381588,45.4313288 70.3473363,45.0415105 68.9989737,44.3553556 L68.9993032,53.34053 L91.0990977,54.112657 C91.8783189,54.139868 92.5394424,53.5677043 92.6386292,52.8100524 L92.6505332,52.66592 L94.0793032,11.69053 L86.5859814,11.4291499 L85.5865905,11.3942504 L85.8833032,2.89752995 L56.9009023,1.88734297 Z M32.1023032,2.12752995 L3.12098334,3.1411694 C2.34176219,3.1683804 1.72216126,3.78526803 1.67606716,4.54799323 L1.67424635,4.69260488 L3.34942219,52.6633646 C3.37663319,53.4425857 3.99352083,54.0621867 4.75624602,54.1082808 L4.90085767,54.1101016 L28.9993032,53.26853 L28.9993032,51.99953 L28,52 C27.4477153,52 27,51.5522847 27,51 L26.9993032,44.83453 L19.5950841,45.0933432 L19.595119,45.0943425 L18.5957281,45.129242 L18.5956932,45.1282427 L13.5987391,45.3027401 L13.598774,45.3037395 L12.5993832,45.338639 L11.8664937,24.3514317 L28.9993032,23.75253 L29,10 C29,8.8954305 29.8954305,8 31,8 L32.3073032,7.99952995 L32.1023032,2.12752995 Z M59,50 L59,51 L53,51 L53,50 L59,50 Z M32.3146067,42 L30,42 L30,49 L31.3033708,49 L31.3033708,46.4311927 L32.3595506,46.4311927 C33.9438202,46.4311927 35.1573034,45.7140673 35.1573034,44.1620795 C35.1573034,42.5351682 33.9438202,42 32.3146067,42 Z M38.505618,42 L36.5393258,42 L36.5393258,49 L38.5730337,49 C40.752809,49 42.0786517,47.7905199 42.0786517,45.4678899 C42.0786517,43.1559633 40.752809,42 38.505618,42 Z M48,42 L43.5617978,42 L43.5617978,49 L44.8651685,49 L44.8651685,46.0779817 L47.5393258,46.0779817 L47.5393258,45.029052 L44.8651685,45.029052 L44.8651685,43.0489297 L48,43.0489297 L48,42 Z M38.4157303,43.0061162 C39.8988764,43.0061162 40.741573,43.7553517 40.741573,45.4678899 C40.741573,47.1222018 39.9649438,47.9281908 38.5906208,47.990023 L38.4157303,47.9938838 L37.8426966,47.9938838 L37.8426966,43.0061162 L38.4157303,43.0061162 Z M59,45 L59,46 L53,46 L53,45 L59,45 Z M32.2134831,42.9954128 C33.3033708,42.9954128 33.8764045,43.2844037 33.8764045,44.1620795 C33.8764045,44.9679799 33.4086155,45.3851518 32.4449351,45.4314423 L32.258427,45.4357798 L31.3033708,45.4357798 L31.3033708,42.9954128 L32.2134831,42.9954128 Z M69.0265641,26.7510919 L68.9993032,26.76653 L68.9996167,43.2178828 C70.3344397,43.991422 71.8438183,44.4309169 73.4242254,44.4861059 C78.3287144,44.6573745 82.4944919,41.0794986 83.1625055,36.3253363 L73.720804,35.9951266 L74.0873158,25.4976802 L74.0873158,25.4976802 C72.2889112,25.4348785 70.5488066,25.8752929 69.0265641,26.7510919 Z M18.4212307,40.1322879 L13.4242765,40.3067854 L13.5638396,44.3033493 L18.5607937,44.1288518 L18.4212307,40.1322879 Z M27.0141292,39.8315388 L19.4206215,40.0973884 L19.5601846,44.0939523 L26.9993032,43.83453 L27,40 C27,39.9425877 27.0048382,39.8863055 27.0141292,39.8315388 Z M59,40 L59,41 L53,41 L53,40 L59,40 Z M18.2467332,35.1353338 L13.249779,35.3098313 L13.389377,39.3073946 L18.3863312,39.1328971 L18.2467332,35.1353338 Z M28.9993032,34.75853 L19.246124,35.1004343 L19.385722,39.0979976 L28.9993032,38.76153 L28.9993032,34.75853 Z M59,35 L59,36 L39,36 L39,35 L59,35 Z M18.0722357,30.1383796 L13.0752816,30.3128771 L13.2148795,34.3104404 L18.2118337,34.1359429 L18.0722357,30.1383796 Z M28.9993032,29.75553 L19.0716265,30.1034801 L19.2112245,34.1010435 L28.9993032,33.75853 L28.9993032,29.75553 Z M59,30 L59,31 L39,31 L39,30 L59,30 Z M17.8977382,25.1414255 L12.9007841,25.315923 L13.0403821,29.3134863 L18.0373362,29.1389888 L17.8977382,25.1414255 Z M28.9993032,24.75353 L18.897129,25.106526 L19.036727,29.1040893 L28.9993032,28.75553 L28.9993032,24.75353 Z M60.9993032,9.41452995 L60.9993032,15.99953 L67.5843032,15.99953 L60.9993032,9.41452995 Z M86.8743032,3.14052995 L86.6203032,10.42953 L93.9093032,10.68353 L86.8743032,3.14052995 Z M33.1093032,2.29952995 L33.3083032,7.99952995 L39.2203032,7.99952995 L33.1093032,2.29952995 Z"></path>
+                                        </svg>
+                                    </div>
+                                    <div id="header-content-btn" class="header-content-btn header-content-btn-padding">
+                                        <button type="button" class="header-principal-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                                <path d="M13 12v-2h1v2h2v1h-2v2h-1v-2h-2v-1h2zm5 8H6V4H5v17h13v-1zm1 0v2H4V3h2V1h10l5 5v14h-2zM7 2v17h13V6l-4-4H7zm9 0l4 4h-4V2z"></path>
+                                            </svg>
+                                            <label for="file-input">
+                                                <span> ADICIONAR </span>
+                                            </label>
+                                        </button>
+                                        <button type="button" class="header-sec-btn">
+                                            <svg viewBox="0 0 16 16" width="10" height="10" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                                <path d="M13.3333 4L14.6666 5.33333L7.99992 12L1.33325 5.33333L2.66659 4L7.99992 9.5L13.3333 4Z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div id="have-file" class="have-file closed">
+                                        <p>ARQUIVO SELECIONADO (<span>  </span>)</p>
+                                    </div>
+                                    <div class="number-lines">
+                                        <input type="number" name="number-lines" id="number-lines-input" placeholder="Numero de linhas" required />
+                                        <button id="btn-submit-form" type="submit" class="tooltip">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                            </svg>
+                                            <span class="tooltiptext">Enviar o arquivo</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="header-content-label">
+                            <p>Reduza o tamanho do seu arquivo usando algum compressor de txt grátis para facilitar e deixar o upload mais rápido!</p>
                         </div>
                     </div>
-                </form>
-            </div>
-        </div>
-        <!-- END INPUT -->
-
-        <!-- CONTENT -->
-        <div class="container">
-            <div class="card-group">
-                <div class="card text-center mb-3 border-0" style="width: 18rem;">
-                    <br/>
-                    <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
-                        <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
-                    </svg>
-                    <div class="card-body">
-                        <h5 class="card-title">Como usar?</h5>
-                        <p class="card-text">É so arrastar seu arquivo, escolher o numero de linhas e pronto!</p>
-                    </div>
-                </div>
-                <div class="card text-center mb-3  border-0" style="width: 18rem;">
-                    <br/>
-                    <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-shield-check" viewBox="0 0 16 16">
-                        <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
-                        <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                    </svg>
-                    <div class="card-body">
-                        <h5 class="card-title">Seguro</h5>
-                        <p class="card-text">Segurança é a nossa prioridade, não ficamos com nenhum registro de seus arquivos.</p>
-                    </div>
-                </div>
-                <div class="card text-center mb-3  border-0" style="width: 18rem;">
-                    <br/>
-                    <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-rocket-takeoff" viewBox="0 0 16 16">
-                        <path d="M9.752 6.193c.599.6 1.73.437 2.528-.362.798-.799.96-1.932.362-2.531-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532Z"/>
-                        <path d="M15.811 3.312c-.363 1.534-1.334 3.626-3.64 6.218l-.24 2.408a2.56 2.56 0 0 1-.732 1.526L8.817 15.85a.51.51 0 0 1-.867-.434l.27-1.899c.04-.28-.013-.593-.131-.956a9.42 9.42 0 0 0-.249-.657l-.082-.202c-.815-.197-1.578-.662-2.191-1.277-.614-.615-1.079-1.379-1.275-2.195l-.203-.083a9.556 9.556 0 0 0-.655-.248c-.363-.119-.675-.172-.955-.132l-1.896.27A.51.51 0 0 1 .15 7.17l2.382-2.386c.41-.41.947-.67 1.524-.734h.006l2.4-.238C9.005 1.55 11.087.582 12.623.208c.89-.217 1.59-.232 2.08-.188.244.023.435.06.57.093.067.017.12.033.16.045.184.06.279.13.351.295l.029.073a3.475 3.475 0 0 1 .157.721c.055.485.051 1.178-.159 2.065Zm-4.828 7.475.04-.04-.107 1.081a1.536 1.536 0 0 1-.44.913l-1.298 1.3.054-.38c.072-.506-.034-.993-.172-1.418a8.548 8.548 0 0 0-.164-.45c.738-.065 1.462-.38 2.087-1.006ZM5.205 5c-.625.626-.94 1.351-1.004 2.09a8.497 8.497 0 0 0-.45-.164c-.424-.138-.91-.244-1.416-.172l-.38.054 1.3-1.3c.245-.246.566-.401.91-.44l1.08-.107-.04.039Zm9.406-3.961c-.38-.034-.967-.027-1.746.163-1.558.38-3.917 1.496-6.937 4.521-.62.62-.799 1.34-.687 2.051.107.676.483 1.362 1.048 1.928.564.565 1.25.941 1.924 1.049.71.112 1.429-.067 2.048-.688 3.079-3.083 4.192-5.444 4.556-6.987.183-.771.18-1.345.138-1.713a2.835 2.835 0 0 0-.045-.283 3.078 3.078 0 0 0-.3-.041Z"/>
-                        <path d="M7.009 12.139a7.632 7.632 0 0 1-1.804-1.352A7.568 7.568 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z"/>
-                    </svg>
-                    <div class="card-body">
-                        <h5 class="card-title">Performance</h5>
-                        <p class="card-text">Rápidez e eficiência para quebrar arquivos com milhões de linhas.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-group">
-                <div class="card text-center mb-3  border-0" style="width: 18rem;">
-                    <br/>
-                    <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-check2-square" viewBox="0 0 16 16">
-                        <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
-                        <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
-                    </svg>
-                    <div class="card-body">
-                        <h5 class="card-title">Qualidade</h5>
-                        <p class="card-text">Presamos pela qualidade por aqui e buscamos sempre a melhor maneira de fazer as coisas.</p>
-                    </div>
-                </div>
-                <div class="card text-center mb-3  border-0" style="width: 18rem;">
-                    <br/>
-                    <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-ban" viewBox="0 0 16 16">
-                        <path d="M15 8a6.973 6.973 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8ZM2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Z"/>
-                    </svg>
-                    <div class="card-body">
-                        <h5 class="card-title">Sem Instalações</h5>
-                        <p class="card-text">Você não precisa instalar NADA no seu computador!</p>
-                    </div>
-                </div>
-                <div class="card text-center mb-3  border-0" style="width: 18rem;">
-                    <br/>
-                    <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-bookmark-heart-fill" viewBox="0 0 16 16">
-                        <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v13.5zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
-                    </svg>
-                    <div class="card-body">
-                        <h5 class="card-title">Fácil e Prático</h5>
-                        <p class="card-text">Fácil, prátioco, rápido, e o melhor de tudo, totalmente grátis!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- END CONTENT -->
-
-        <!-- DOWNLOAD -->
-        <div class="border-dark" style="background-color: #e9ecef;">
-            <div class="text-center" style="padding-top: 100px; padding-bottom: 100px;">
-                <br/>
-                <a href="assets/files/FileDivider.rar" download="file_divider.rar">
-                    <svg id="svg-download-exe" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cloud-download" viewBox="0 0 16 16">
-                        <path d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
-                        <path d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
-                    </svg>
-                </a>
-                <div class="card-body">
-                    <a href="assets/files/FileDivider.rar" download="file_divider.rar">
-                        <h5 id="label-download-exe" class="card-title">Download .exe</h5>
-                    </a>
-                    <p class="card-text">Em caso de arquivos muito grandes <bold>(acima de 32MB)</bold> você pode usar o nosso arquivo executavel</p>
-                </div>
-            </div>
-        </div>
-        <!-- END DOWNLOAD -->
-
-        <!-- FOOTER -->
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 bg-dark">
-            <div class="col-md-4 d-flex align-items-center">
-                <a href="#" class="mb-3 me-2 mb-md-0 text-white text-decoration-none lh-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" fill="currentColor" class="bi bi-filetype-txt" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-2v-1h2a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.928 15.849v-3.337h1.136v-.662H0v.662h1.134v3.337h.794Zm4.689-3.999h-.894L4.9 13.289h-.035l-.832-1.439h-.932l1.228 1.983-1.24 2.016h.862l.853-1.415h.035l.85 1.415h.907l-1.253-1.992 1.274-2.007Zm1.93.662v3.337h-.794v-3.337H6.619v-.662h3.064v.662H8.546Z" />
-                    </svg>
-                </a>
-            </div>
-
-            <div class="col-md-4 d-flex align-items-center justify-content-center">
-                <span class="mb-3 mb-md-0 text-white">© 2023 File Divider</span>
-            </div>
-
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="m-sm-2">
-                    <a class="text-white" href="https://marccusz.com" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
-                            <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
-                          </svg>
-                    </a>
-                </li>
-                <li class="m-sm-2">
-                    <a class="text-white" href="https://github.com/zavadzki72" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </header>
+            
+                <!-- CARDS -->
+                <div class="cards">
+                    <div class="card-item">
+                        <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                            <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
                         </svg>
-                    </a>
-                </li>
-            </ul>
-        </footer>
-        <!-- END FOOTER -->
+                        <div class="card-title">
+                            Como usar?
+                        </div>
+                        <div class="card-content">
+                            <span>
+                                É so arrastar seu arquivo, escolher o numero de linhas e pronto!
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-check2-square" viewBox="0 0 16 16">
+                            <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+                            <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
+                        </svg>
+                        <div class="card-title">
+                            Qualidade
+                        </div>
+                        <div class="card-content">
+                            <span>
+                                Presamos pela qualidade por aqui e buscamos sempre a melhor maneira de fazer as coisas.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-shield-check" viewBox="0 0 16 16">
+                            <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
+                            <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                        <div class="card-title">
+                            Seguro
+                        </div>
+                        <div class="card-content">
+                            <span>
+                                Segurança é a nossa prioridade, não ficamos com nenhum registro de seus arquivos.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-rocket-takeoff" viewBox="0 0 16 16">
+                            <path d="M9.752 6.193c.599.6 1.73.437 2.528-.362.798-.799.96-1.932.362-2.531-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532Z"/>
+                            <path d="M15.811 3.312c-.363 1.534-1.334 3.626-3.64 6.218l-.24 2.408a2.56 2.56 0 0 1-.732 1.526L8.817 15.85a.51.51 0 0 1-.867-.434l.27-1.899c.04-.28-.013-.593-.131-.956a9.42 9.42 0 0 0-.249-.657l-.082-.202c-.815-.197-1.578-.662-2.191-1.277-.614-.615-1.079-1.379-1.275-2.195l-.203-.083a9.556 9.556 0 0 0-.655-.248c-.363-.119-.675-.172-.955-.132l-1.896.27A.51.51 0 0 1 .15 7.17l2.382-2.386c.41-.41.947-.67 1.524-.734h.006l2.4-.238C9.005 1.55 11.087.582 12.623.208c.89-.217 1.59-.232 2.08-.188.244.023.435.06.57.093.067.017.12.033.16.045.184.06.279.13.351.295l.029.073a3.475 3.475 0 0 1 .157.721c.055.485.051 1.178-.159 2.065Zm-4.828 7.475.04-.04-.107 1.081a1.536 1.536 0 0 1-.44.913l-1.298 1.3.054-.38c.072-.506-.034-.993-.172-1.418a8.548 8.548 0 0 0-.164-.45c.738-.065 1.462-.38 2.087-1.006ZM5.205 5c-.625.626-.94 1.351-1.004 2.09a8.497 8.497 0 0 0-.45-.164c-.424-.138-.91-.244-1.416-.172l-.38.054 1.3-1.3c.245-.246.566-.401.91-.44l1.08-.107-.04.039Zm9.406-3.961c-.38-.034-.967-.027-1.746.163-1.558.38-3.917 1.496-6.937 4.521-.62.62-.799 1.34-.687 2.051.107.676.483 1.362 1.048 1.928.564.565 1.25.941 1.924 1.049.71.112 1.429-.067 2.048-.688 3.079-3.083 4.192-5.444 4.556-6.987.183-.771.18-1.345.138-1.713a2.835 2.835 0 0 0-.045-.283 3.078 3.078 0 0 0-.3-.041Z"/>
+                            <path d="M7.009 12.139a7.632 7.632 0 0 1-1.804-1.352A7.568 7.568 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z"/>
+                        </svg>
+                        <div class="card-title">
+                            Performance
+                        </div>
+                        <div class="card-content">
+                            <span>
+                                Rápidez e eficiência para quebrar arquivos com milhões de linhas.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-ban" viewBox="0 0 16 16">
+                            <path d="M15 8a6.973 6.973 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8ZM2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Z"/>
+                        </svg>
+                        <div class="card-title">
+                            Sem Instalações
+                        </div>
+                        <div class="card-content">
+                            <span>
+                                Você não precisa instalar NADA no seu computador!
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-bookmark-heart-fill" viewBox="0 0 16 16">
+                            <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v13.5zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                        </svg>
+                        <div class="card-title">
+                            Fácil e Prático
+                        </div>
+                        <div class="card-content">
+                            <span>
+                                Fácil, prátioco, rápido, e o melhor de tudo, totalmente grátis!
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="footer-content-one">
+                    <div class="footer-one">
+                        <div class="footer-one-logo">
+                            <img src="assets/images/logo.png" alt="Smallpdf logo" title="Smallpdf" width="120" height="42" />
+                            <div class="footer-one-logo-text">
+                                Separe arquivos tranquilamente conosco.
+                            </div>
+                        </div>
+                        <nav class="footer-one-nav">
+                            <ul class="footer-one-list">
+                                <h2 class="footer-one-list-title">
+                                    Redes sociais
+                                </h2>
+                                <a class="footer-one-list-a" href="https://www.linkedin.com/in/marccus-zava/" target="_blank">
+                                    LinkedIn
+                                </a>
+                                <a class="footer-one-list-a" href="https://github.com/zavadzki72" target="_blank">
+                                    Github
+                                </a>
+                                <a class="footer-one-list-a" href="https://www.marccusz.com" target="_blank">
+                                    Marccus Zavadzki
+                                </a>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer-content-two">
+                    <div class="footer-two">
+                        © 2023 File Divider
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- SCRIPTS -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        
-        <script src="assets/index.js"></script>
+
+        <script src="assets/txt-divider.js"></script>
     </body>
 </html>

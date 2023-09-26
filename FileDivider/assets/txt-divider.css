@@ -385,10 +385,15 @@ a{
     border-left: 1px solid;
     box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
     border-radius: 0 .2rem .2rem 0;
-    width: 4%;
     height: 2.2rem;
     background-color: white;
     cursor: pointer;
+}
+
+@media (min-width:500px) {
+    .number-lines > button{
+        width: 4%;
+    }
 }
 
 .number-lines > button > svg {

@@ -125,7 +125,7 @@ function onSubmitFormPdf(){
         var date = new Date();
         saveFile(response, `FileDivider_${date.toISOString()}.zip`);
     
-        numberLines.value = '';
+        fileName.value = '';
         file.value = '';
 
         $('#header-content-btn').addClass('header-content-btn-padding');

@@ -1,7 +1,7 @@
 $(document).ready(function () {
     onClickNav();
     onChangeFile();
-    onSubmitForm();
+    onSubmitFormTxt();
 });
 
 function onChangeFile(){
@@ -21,17 +21,23 @@ function onClickNav(){
         navElementsOpenAndClose();
     });
 
-    $('#nav-dropdown-div-item-ciano').on('click', function() {
+    onClickNavItem('#nav-dropdown-div-item-ciano-1', 'index.html');
+    onClickNavItem('#nav-dropdown-div-item-ciano-2', 'pdf-divider.html');
+}
+
+function onClickNavItem(id, actionClick){
+    $(id).on('click', function() {
         navElementsOpenAndClose();
+        relativeRedir(actionClick);
     });
 
-    $("#nav-dropdown-div-item-ciano").on({
+    $(id).on({
         mouseenter: function () {
-            var element = $('#nav-dropdown-div-item-ciano');
+            var element = $(id);
             element.addClass('nav-item-mouse-over-ciano');
         },
         mouseleave: function () {
-            var element = $('#nav-dropdown-div-item-ciano');
+            var element = $(id);
             element.removeClass('nav-item-mouse-over-ciano');
         }
     });
@@ -67,16 +73,45 @@ function navElementsOpenAndClose(){
     }
 }
 
-function onSubmitForm(){
+function onSubmitFormTxt(){
 
-    $('#file-form').on("submit", async function( event ) {
+    $('#file-form-txt').on("submit", async function( event ) {
 
         event.preventDefault();
 
         var numberLines = document.getElementById("number-lines-input");
-        var file = document.querySelector('#file-input');
+        var file = document.querySelector('#file-input-txt');
 
-        var response = await sendFileRequest(file, numberLines.value);
+        var response = await sendFileRequestTxt(file, numberLines.value);
+        
+        if(!response)
+            return
+
+        var date = new Date();
+        saveFile(response, `FileDivider_${date.toISOString()}.zip`);
+    
+        numberLines.value = '';
+        file.value = '';
+
+        $('#header-content-btn').addClass('header-content-btn-padding');
+        $('#have-file').removeClass('open');
+        $('#have-file').addClass('closed');
+
+        showAlert('Seu arquivo foi baixado!', 'success', 1500);
+    });
+
+}
+
+function onSubmitFormPdf(){
+
+    $('#file-form-pdf').on("submit", async function( event ) {
+
+        event.preventDefault();
+
+        var fileName = document.getElementById("file-name-input");
+        var file = document.querySelector('#file-input-pdf');
+
+        var response = await sendFileRequestPdf(file, fileName.value);
         
         if(!response)
             return
@@ -110,7 +145,7 @@ function showAlert(message, type, delay){
     alert.fadeIn(500).delay(delay).fadeOut(500);
 }
 
-async function sendFileRequest(file, numberLines){
+async function sendFileRequestTxt(file, numberLines){
 
     var headers = new Headers();
     headers.append("accept", "*/*");
@@ -124,6 +159,41 @@ async function sendFileRequest(file, numberLines){
     formdata.append("formFile", file.files[0], "/path/to/file");
 
     var urlRequest = `https://filedivider-api-lctjimkxeq-uc.a.run.app/divide?numberLineToDivide=${numberLines}`;
+
+    const response = await fetch(urlRequest, {
+        method: 'POST',
+        headers: headers,
+        body: formdata
+    }).catch(x => {
+        showAlert('Ocorreu um erro inesperado, tente novamente mais tarde!', 'error', 2000);
+        return;
+    });
+
+    if(response.status != 200){
+        var respString = await response.text();
+
+        showAlert(`Ocorreu um erro (${respString})!`, 'error', 2000);
+        return;
+    }
+
+    var blob = await response.blob();
+    return blob;
+}
+
+async function sendFileRequestPdf(file, fileName){
+
+    var headers = new Headers();
+    headers.append("accept", "*/*");
+
+    if(!file.files[0]){
+        showAlert('Voce precisa informar um arquivo!', 'error', 2000);
+        return;
+    }
+
+    var formdata = new FormData();
+    formdata.append("formFile", file.files[0], "/path/to/file");
+
+    var urlRequest = `https://filedivider-api-lctjimkxeq-uc.a.run.app/divide/pdf/by-page?fileName=${fileName}`;
 
     const response = await fetch(urlRequest, {
         method: 'POST',
@@ -160,4 +230,8 @@ function saveFile(blob, filename) {
         document.body.removeChild(a);
       }, 0)
     }
+}
+
+function relativeRedir(redir){
+    location.pathname = location.pathname.replace(/(.*)\/[^/]*/, "$1/"+redir);
 }

@@ -2,10 +2,16 @@ $(document).ready(function () {
     onClickNav();
     onChangeFile();
     onSubmitFormTxt();
+    onSubmitFormPdf();
 });
 
 function onChangeFile(){
-    $('#file-input').change(function() {
+    onChangeFileItens('#file-input-txt');
+    onChangeFileItens('#file-input-pdf');
+}
+
+function onChangeFileItens(id){
+    $(id).change(function() {
 
         $('#header-content-btn').removeClass('header-content-btn-padding');
 
